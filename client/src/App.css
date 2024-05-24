@@ -1,0 +1,56 @@
+.App {
+  text-align: center;
+}
+
+.photos-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.photo-container {
+  width: 300px;
+  height: max-content;
+}
+.photo-container > img {
+  width: 100%;
+  height: 300px;
+}
+
+.photo-container > .tags {
+  color: rgb(117, 161, 241);
+  padding: 5px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.photo-container > .tags > span {
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination > button {
+  font-size: 30px;
+  border: none;
+  background-color: #0069d9;
+  color: #fff;
+  cursor: pointer;
+  border-radius: .25rem;
+}
+
+.delete-button {
+  cursor: pointer;
+  border: none;
+  color: #fff;
+  background-color: #c82333;
+  border-radius: .25rem;
+  padding: 5px 10px;
+}
