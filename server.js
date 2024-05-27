@@ -15,10 +15,12 @@ app.use('/api', routes);
 
 async function start() {
   try {
-    const { photos } = await flickrService.getPhotoByTags();
-    console.log('start inserting photos');
-    await PhotoService.insertDb(photos?.photo)
-    console.log('end inserting photos');
+    if (process.env.NODE_ENV !== 'test') {
+      const { photos } = await flickrService.getPhotoByTags();
+      console.log('start inserting photos');
+      await PhotoService.insertDb(photos?.photo);
+      console.log('end inserting photos');
+    }
     app.listen(PORT, () => console.log(`App runing in: ${PORT}`));
   } catch (error) {
     console.log(error);
@@ -26,3 +28,5 @@ async function start() {
 }
 
 start();
+
+module.exports = app;
